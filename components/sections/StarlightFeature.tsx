@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/SectionHeading";
 export function StarlightFeature() {
@@ -14,8 +13,18 @@ export function StarlightFeature() {
         <a className="text-link mt-7" href="#headliner">Try the headliner studio <span aria-hidden="true">↗</span></a>
       </div>
       <div className="relative aspect-[4/5] max-h-[620px] overflow-hidden bg-[#121212] max-md:aspect-[5/4]">
-        <Image src="/images/starlight.webp" alt="Fiber-optic stars above pale leather seats in a luxury car interior" fill sizes="(max-width: 768px) 90vw, 45vw" className="object-cover object-[50%_36%] brightness-90" />
-        <span className="absolute bottom-4 left-4 bg-black/65 px-3 py-2 text-[11px] text-neutral-200">Starlight inspiration · concept photography</span>
+        <video
+          className="h-full w-full object-cover object-center brightness-90"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="/images/starlight.webp"
+          aria-label="Signature starlight installation inside a luxury car"
+        >
+          <source src="/images/signature-starlight.mp4" type="video/mp4" />
+        </video>
       </div>
     </Container>
   </section>;

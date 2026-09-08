@@ -10,7 +10,7 @@ The user supplied and identified actual completed installations for “The inspi
 | `images/install-violet-starlight.webp` | `3b84f357-55f6-4023-be3d-5514328041d8.jpg` |
 | `images/install-blue-ambient.webp` | `d99a1490-0253-46ea-bab3-0b045edca664.jpg` |
 
-The gallery now identifies completed work and no longer labels these photographs as concepts. The video and remaining supplied photographs were not added. The older concept assets below are retained; the hero, signature and closing images remain concept assets.
+The gallery now identifies completed work and no longer labels these photographs as concepts. The supplied signature video is used in the signature section; the remaining supplied photographs were not added. The older concept assets below are retained; the hero and closing images remain concept assets.
 
 ## Original Phase 2 assets
 
@@ -19,6 +19,7 @@ The Phase 2 frontend uses the existing local WebP assets through Next Image. No 
 - `brand/galaxy-logo.webp`: transparent 560 × 431 logo extracted from the embedded PNG in the hash-locked reference, trimmed and optimized by the previous asset preparation script. Used in the header, mobile menu, footer, and browser icon. Proportions are preserved.
 - `images/hero.webp`: black Rolls-Royce front view; hero.
 - `images/starlight.webp`: fiber-optic headliner over pale leather seats; signature section.
+- `images/signature-starlight.mp4`: user-supplied 576 × 1024, 19-second installation video; signature section, muted inline loop with the existing WebP as poster fallback.
 - `images/closing.webp`: open Mercedes concept interior; closing background.
 - `images/black-tie.webp`: black Rolls-Royce on a city street; gallery.
 - `images/ambient.webp`: Toyota SUV with an amber roof light bar; accurately relabeled as exterior inspiration despite its legacy filename.
