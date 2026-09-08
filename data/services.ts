@@ -25,4 +25,12 @@ export const services: Service[] = [
       "Lighting beneath the vehicle and around the wheel wells, with placement tailored to your build.",
     quoteValue: "Rock Lights",
   },
+  {
+    id: "Full Lighting Package",
+    number: "04",
+    title: "Full Lighting Package",
+    description:
+      "Complete starlight, ambient, and rock-light setup tailored to your vehicle.",
+    quoteValue: "Full Lighting Package",
+  },
 ];
