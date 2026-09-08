@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { projects } from "@/data/projects";
+import { CompletedWorkGallery } from "@/components/gallery/CompletedWorkGallery";
 
 export function Gallery() {
   return (
@@ -15,6 +16,7 @@ export function Gallery() {
         <div className="grid grid-cols-3 gap-x-6 gap-y-10 max-md:grid-cols-1">
           {projects.map((project) => <ProjectCard key={project.id} project={project} />)}
         </div>
+        <CompletedWorkGallery />
       </Container>
     </section>
   );
