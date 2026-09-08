@@ -16,7 +16,7 @@ export function Footer() {
         <div><h2 className="mb-4 text-xs uppercase tracking-[.12em] text-[var(--gold-hi)]">Experiences</h2>{services.map(s=><a key={s.id} href="#quote" data-service={s.quoteValue} className="block py-2 text-sm text-[var(--muted)] hover:text-[var(--gold-hi)]">{s.title}</a>)}</div>
         <FooterColumn title="Start a conversation" links={connect} />
       </div>
-      <div className="flex flex-wrap justify-between gap-3 border-t border-white/10 pt-6 text-xs leading-6 text-[var(--muted)]"><span>© 2026 Galaxy Car Lights LLC</span><span>Concept photography · Sample reviews · Enquiry preview</span></div>
+      <div className="flex flex-wrap justify-between gap-3 border-t border-white/10 pt-6 text-xs leading-6 text-[var(--muted)]"><span>© 2026 Galaxy Car Lights LLC</span><span>  </span></div>
     </Container>
   </footer>;
 }
