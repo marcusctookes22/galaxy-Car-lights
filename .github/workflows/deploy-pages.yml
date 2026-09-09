@@ -34,8 +34,8 @@ jobs:
         run: npm run build:static
         env:
           STATIC_EXPORT: "true"
-          NEXT_PUBLIC_BASE_PATH: /galaxy-lights-demo
-          NEXT_PUBLIC_SITE_URL: https://marcusctookes22.github.io/galaxy-lights-demo
+          NEXT_PUBLIC_BASE_PATH: /galaxy-Car-lights
+          NEXT_PUBLIC_SITE_URL: https://marcusctookes22.github.io/galaxy-Car-lights/
       - name: Upload static site
         uses: actions/upload-pages-artifact@v3
         with:
