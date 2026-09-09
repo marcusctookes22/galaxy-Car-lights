@@ -11,6 +11,19 @@ npm install
 npm run dev
 ```
 
+To create and inspect a client-only static preview:
+
+```bash
+npm run build:static
+npm run preview:static
+```
+
+The generated files are written to `out/`. Static mode keeps quote delivery disabled; use the normal Next.js server build when the secure `/api/contact` endpoint is configured.
+
+## GitHub Pages preview
+
+The `Deploy static client preview` workflow publishes the static export at `https://marcusctookes22.github.io/galaxy-lights-demo/` after a push to `main`. In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions** once. This preview is intentionally client-only; quote delivery remains disabled until the server-backed production deployment is configured.
+
 Before enabling contact delivery, copy `.env.example` to `.env.local` and provide the approved business and provider values. Never commit `.env.local`.
 
 ## Verification

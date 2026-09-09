@@ -1,9 +1,10 @@
 import Image from "next/image";
+import { publicPath } from "@/lib/publicPath";
 import { HeroStarField } from "@/components/effects/HeroStarField";
 import { Container } from "@/components/ui/Container";
 export function Hero() {
   return <section id="top" className="relative isolate flex min-h-[min(900px,100svh)] items-end overflow-hidden border-b border-white/10 max-sm:min-h-[780px]">
-    <Image src="/images/hero.webp" alt="Black Rolls-Royce photographed after dark" fill preload sizes="100vw" className="-z-30 object-cover object-[60%_57%] max-sm:object-[50%_48%]" />
+    <Image src={publicPath("/images/hero.webp")} alt="Black Rolls-Royce photographed after dark" fill preload sizes="100vw" className="-z-30 object-cover object-[60%_57%] max-sm:object-[50%_48%]" />
     <div className="hero-shade absolute inset-0 -z-20" />
     <HeroStarField />
     <Container className="relative z-10 pt-40 pb-20 max-sm:pt-64 max-sm:pb-16">

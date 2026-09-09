@@ -1,8 +1,9 @@
 import Image from "next/image";
+import { publicPath } from "@/lib/publicPath";
 import { Eyebrow } from "@/components/ui/SectionHeading";
 export function ClosingCTA() {
   return <section id="next-chapter" className="relative isolate grid min-h-[500px] place-items-center overflow-hidden border-t border-white/10 text-center max-sm:min-h-[430px]">
-    <Image src="/images/closing.webp" alt="" fill sizes="100vw" className="-z-20 object-cover object-[50%_58%]" />
+    <Image src={publicPath("/images/closing.webp")} alt="" fill sizes="100vw" className="-z-20 object-cover object-[50%_58%]" />
     <div className="absolute inset-0 -z-10 bg-black/80" />
     <div className="px-[var(--page-pad)] py-20">
       <div className="flex justify-center"><Eyebrow>Your next chapter</Eyebrow></div>

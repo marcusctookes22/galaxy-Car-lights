@@ -1,4 +1,5 @@
 import { Container } from "@/components/ui/Container";
+import { publicPath } from "@/lib/publicPath";
 import { Eyebrow } from "@/components/ui/SectionHeading";
 export function StarlightFeature() {
   return <section className="border-y border-white/10 bg-[#0b0b0a]">
@@ -20,10 +21,10 @@ export function StarlightFeature() {
           loop
           playsInline
           preload="metadata"
-          poster="/images/starlight.webp"
+          poster={publicPath("/images/starlight.webp")}
           aria-label="Signature starlight installation inside a luxury car"
         >
-          <source src="/images/signature-starlight.mp4" type="video/mp4" />
+          <source src={publicPath("/images/signature-starlight.mp4")} type="video/mp4" />
         </video>
       </div>
     </Container>

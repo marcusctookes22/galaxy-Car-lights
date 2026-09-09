@@ -1,17 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope, Playfair_Display } from "next/font/google";
+import localFont from "next/font/local";
+import { publicPath } from "@/lib/publicPath";
 import "./globals.css";
 
-const manrope = Manrope({
-  subsets: ["latin"],
+const manrope = localFont({
+  src: "../public/fonts/manrope-latin.woff2",
   variable: "--font-manrope",
   display: "swap",
+  weight: "200 800",
 });
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
+const playfair = localFont({
+  src: "../public/fonts/playfair-display-latin.woff2",
   variable: "--font-playfair",
   display: "swap",
+  weight: "400 900",
 });
 
 export const metadata: Metadata = {
@@ -19,7 +22,7 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL || "https://galaxycarlights.com",
   ),
   title: "Galaxy Car Lights LLC — Luxury Automotive Lighting",
-  icons: { icon: { url: "/brand/galaxy-logo.webp", type: "image/webp" } },
+  icons: { icon: { url: publicPath("/brand/galaxy-logo.webp"), type: "image/webp" } },
   description:
     "Bespoke automotive lighting — starlights with an optional Shooting Star effect, ambient lights, and rock lights.",
 };
