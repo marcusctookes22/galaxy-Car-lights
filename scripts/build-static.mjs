@@ -5,7 +5,7 @@ const require = createRequire(import.meta.url);
 const nextCli = require.resolve("next/dist/bin/next");
 const result = spawnSync(process.execPath, [nextCli, "build"], {
   stdio: "inherit",
-  env: { ...process.env, STATIC_EXPORT: "true" },
+  env: { ...process.env, STATIC_EXPORT: "true", NEXT_PUBLIC_STATIC_PREVIEW: "true" },
 });
 
 if (result.error) {
