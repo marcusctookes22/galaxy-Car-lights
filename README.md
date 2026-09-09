@@ -22,7 +22,7 @@ The generated files are written to `out/`. Static mode keeps quote delivery disa
 
 ## GitHub Pages preview
 
-The `Deploy static client preview` workflow publishes the static export at `https://marcusctookes22.github.io/galaxy-lights-demo/` after a push to `main`. In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions** once. This preview is intentionally client-only; quote delivery remains disabled until the server-backed production deployment is configured.
+The `Deploy static client preview` workflow publishes the static export at `https://marcusctookes22.github.io/galaxy-Car-lights/` after a push to `main`. In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions** once. This preview is intentionally client-only; quote delivery remains disabled until the server-backed production deployment is configured.
 
 Before enabling contact delivery, copy `.env.example` to `.env.local` and provide the approved business and provider values. Never commit `.env.local`.
 
