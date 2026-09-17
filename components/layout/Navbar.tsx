@@ -43,12 +43,12 @@ export function Navbar() {
   };
   return <>
     <a className="skip-link" href="#main-content">Skip to content</a>
-    <header className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${scrolled ? "border-white/10 bg-[#060606]/95 backdrop-blur-lg" : "border-transparent bg-gradient-to-b from-black/55 to-transparent"}`}>
+    <header data-scrolled={scrolled} className="nav-glass fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300">
       <Container className="flex h-24 items-center justify-between gap-5 max-sm:h-20">
         <a ref={homeRef} href="#top" aria-label="Galaxy Car Lights home"><Brand /></a>
         <nav aria-label="Primary navigation" className="flex items-center gap-7 max-lg:hidden">
-          {navItems.map(([label,href]) => <a key={href} href={href} className="py-3 text-[13px] text-[#c4c1b9] transition-colors hover:text-[var(--gold-hi)]">{label}</a>)}
-          <a className="button-base border-[var(--gold)]/50" href="#quote">Start your build <span aria-hidden="true">↗</span></a>
+          {navItems.map(([label,href]) => <a key={href} href={href} className="py-3 text-[13px] text-[#e0ddd5] transition-colors hover:text-[var(--gold-hi)]">{label}</a>)}
+          <a className="button-base border-[var(--gold)]/50 bg-white/5 text-[var(--text)] hover:border-[var(--gold-hi)] hover:bg-[#d9b04f]/10" href="#quote">Start your build <span aria-hidden="true">↗</span></a>
         </nav>
         <button ref={triggerRef} type="button" className="hidden min-h-11 items-center gap-3 px-2 text-sm max-lg:flex" aria-expanded={open} aria-controls="mobile-menu" aria-label="Open menu" onClick={() => { dialogRef.current?.showModal(); setOpen(true); }}>
           Menu <span className="grid gap-1.5" aria-hidden="true"><span className="h-px w-6 bg-current" /><span className="h-px w-6 bg-current" /></span>

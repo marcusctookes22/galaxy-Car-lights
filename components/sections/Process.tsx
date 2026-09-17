@@ -8,6 +8,7 @@ export function Process() {
       <Container>
         <SectionHeading
           eyebrow="The process"
+          mobileCopy={null}
           title={<>Simple from idea<br />to <span className="serif-gold">installation.</span></>}
           copy="Bring us your vision. We’ll help shape the details, walk you through your options and plan an installation around your vehicle."
         />

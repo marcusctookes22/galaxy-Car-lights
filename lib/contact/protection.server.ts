@@ -14,7 +14,7 @@ export class ContactFailure extends Error {
   }
 }
 
-export const unavailable = () => new ContactFailure(503, "unavailable", "Quote delivery is temporarily unavailable. Your details are still here. Please try again later.");
+export const unavailable = () => new ContactFailure(503, "unavailable", "Enquiry submission is temporarily unavailable. Your details are still here. Please try again later.");
 
 export async function externalJson(url: string, init: RequestInit, fetcher: typeof fetch = fetch): Promise<unknown> {
   const response = await fetcher(url, { ...init, cache: "no-store", redirect: "error", signal: AbortSignal.timeout(7000) });

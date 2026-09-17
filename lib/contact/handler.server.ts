@@ -42,9 +42,9 @@ async function readBody(request: Request): Promise<unknown> {
 // Dependency injection is only for tests; the public route always uses real providers.
 export async function handleContact(request: Request, options: { config?: ContactConfig | null; fetcher?: typeof fetch } = {}) {
   try {
-    if (request.method !== "POST") return json({ ok: false, code: "method_not_allowed", message: "Use the quote form to send your request." }, 405, { Allow: "POST" });
+    if (request.method !== "POST") return json({ ok: false, code: "method_not_allowed", message: "Use the enquiry form to send your request." }, 405, { Allow: "POST" });
     if (request.headers.get("content-type")?.split(";")[0].trim().toLowerCase() !== "application/json") {
-      throw new ContactFailure(415, "unsupported_media_type", "Please send your request using the quote form.");
+      throw new ContactFailure(415, "unsupported_media_type", "Please send your request using the enquiry form.");
     }
     const config = options.config === undefined ? getContactConfig() : options.config;
     if (!config) throw unavailable();
@@ -66,7 +66,7 @@ export async function handleContact(request: Request, options: { config?: Contac
     }
     await verifyTurnstile(parsed.data.turnstileToken, origin, config, fetcher);
     await deliverEmail(parsed.data, config, fetcher);
-    return json({ ok: true, message: "Your quote request has been sent. Galaxy Car Lights will contact you about your build." }, 200);
+    return json({ ok: true, message: "Your build enquiry has been sent. Galaxy Car Lights will contact you to discuss your vehicle and chosen services." }, 200);
   } catch (error) {
     const failure = error instanceof ContactFailure ? error : unavailable();
     return json({ ok: false, code: failure.code, message: failure.message }, failure.status, failure.retryAfter ? { "Retry-After": String(failure.retryAfter) } : {});

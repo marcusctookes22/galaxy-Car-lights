@@ -8,8 +8,8 @@ export const processSteps: ProcessStep[] = [
   },
   {
     number: "02",
-    title: "Receive your quote",
-    description: "We review the configuration and provide pricing for the build.",
+    title: "Discuss your build",
+    description: "Our team contacts you to discuss your vehicle, options and next steps.",
   },
   {
     number: "03",

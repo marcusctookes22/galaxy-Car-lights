@@ -44,11 +44,21 @@ test("valid request reaches provider once, with fixed recipient/sender and valid
   const response = await handleContact(request(), { config, fetcher: mock.fetcher });
   assert.equal(response.status, 200);
   assert.equal(response.headers.get("cache-control"), "no-store");
-  assert.equal((await response.json()).ok, true);
+  const result = await response.json();
+  assert.equal(result.ok, true);
+  assert.match(result.message, /build enquiry has been sent/);
+  assert.match(result.message, /will contact you/);
+  assert.doesNotMatch(result.message, /quote/i);
   assert.equal(sends(mock).length, 1);
   const body = sends(mock)[0].body;
   assert.deepEqual(body.to, [config.to]); assert.equal(body.from, config.from); assert.equal(body.reply_to, valid.email);
   assert(String(body.text).includes("Shooting Star")); assert(String(body.text).includes("Contact consent: Yes"));
+  assert.equal(body.subject, "New build enquiry — Galaxy Car Lights");
+  for (const detail of ["2024 BMW M4", valid.service, valid.name, valid.phone, valid.email, valid.message]) {
+    assert(String(body.text).includes(detail), `Enquiry email retains ${detail}`);
+  }
+  assert.match(String(body.text), /build-enquiry-contact-v2/);
+  assert.doesNotMatch(String(body.text), /quote request/i);
   assert.equal(body.html, undefined); assert(!String(body.text).includes(valid.turnstileToken));
 });
 
@@ -170,6 +180,7 @@ test("production rejects dummy Turnstile keys and invalid origins/senders", () =
     TURNSTILE_SECRET_KEY: config.turnstileSecret, UPSTASH_REDIS_REST_URL: config.redisUrl, UPSTASH_REDIS_REST_TOKEN: config.redisToken,
     CONTACT_HASH_SECRET: config.hashSecret };
   assert(getContactConfig(env));
+  assert.equal(getContactConfig({ ...env, STATIC_EXPORT: "true" }), null, "static previews must never enable delivery even with complete credentials");
   for (const patch of [
     { CONTACT_ALLOWED_ORIGINS: "https://galaxy.example/path" }, { CONTACT_ALLOWED_ORIGINS: "http://evil.example" },
     { CONTACT_FROM_EMAIL: "a@example.com\r\nBcc: b@example.com" }, { CONTACT_EMAIL: "bad" }, { CONTACT_HASH_SECRET: "short" },

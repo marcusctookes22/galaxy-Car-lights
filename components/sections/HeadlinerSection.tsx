@@ -8,6 +8,7 @@ export function HeadlinerSection() {
       <Container className="relative">
         <SectionHeading
           eyebrow="Interactive design studio"
+          mobileCopy="Choose your layout, color and effects. Illustrative preview; final placement is tailored to your vehicle."
           title={<>See the sky<br />before we <span className="serif-gold">build it.</span></>}
           copy="Explore layouts, colors and effects on a virtual headliner. An illustrative concept to help shape your build. Final star placement is tailored to your vehicle."
         />

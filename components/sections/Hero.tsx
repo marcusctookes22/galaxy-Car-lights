@@ -4,7 +4,7 @@ import { HeroStarField } from "@/components/effects/HeroStarField";
 import { Container } from "@/components/ui/Container";
 export function Hero() {
   return <section id="top" className="relative isolate flex min-h-[min(900px,100svh)] items-end overflow-hidden border-b border-white/10 max-sm:min-h-[780px]">
-    <Image src={publicPath("/images/hero.webp")} alt="Black Rolls-Royce photographed after dark" fill preload sizes="100vw" className="-z-30 object-cover object-[60%_57%] max-sm:object-[50%_48%]" />
+    <Image src={publicPath("/images/hero-lighter-sky.webp")} alt="Black Rolls-Royce photographed after dark" fill preload sizes="100vw" className="-z-30 object-cover object-[60%_57%] brightness-[1.2] max-sm:object-[50%_48%]" />
     <div className="hero-shade absolute inset-0 -z-20" />
     <HeroStarField />
     <Container className="relative z-10 pt-40 pb-20 max-sm:pt-64 max-sm:pb-16">
@@ -12,7 +12,7 @@ export function Hero() {
       <h1 className="hero-title max-w-[760px]"><span className="block">LIGHT</span><em className="serif-gold block">beyond</em><span className="block">ORDINARY.</span></h1>
       <div className="mt-8 flex items-end justify-between gap-10">
         <div className="max-w-[460px]">
-          <p className="text-[15px] leading-7 text-[#c4c1b9]">Custom starlights, ambient lights and rock lights. Made for the way you want to feel after dark.</p>
+          <p className="text-[15px] leading-7 text-[#c4c1b9]">Custom starlights, ambient lights and rock lights.<span className="max-sm:hidden"> Made for the way you want to feel after dark.</span></p>
           <div className="mt-7 flex flex-wrap items-center gap-x-7 gap-y-3 max-sm:gap-x-5">
             <a className="button-base button-primary" href="#services">Explore the possibilities <span aria-hidden="true">↓</span></a>
             <a className="text-link" href="#headliner">Design your sky <span aria-hidden="true">↗</span></a>

@@ -1,5 +1,5 @@
-export const CONTACT_CONSENT_VERSION = "quote-contact-v1";
-export const CONTACT_CONSENT_TEXT = "I agree that Galaxy Car Lights may use these details to contact me about my quote request.";
+export const CONTACT_CONSENT_VERSION = "build-enquiry-contact-v2";
+export const CONTACT_CONSENT_TEXT = "I agree that Galaxy Car Lights may use these details to contact me about my build enquiry.";
 
 export type ContactSubmission = {
   submissionId: string;

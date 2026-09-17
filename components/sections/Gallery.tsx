@@ -10,6 +10,7 @@ export function Gallery() {
       <Container>
         <SectionHeading
           eyebrow="The inspiration"
+          mobileCopy={null}
           title={<>Built to be seen.<br /><span className="serif-gold">Remembered.</span></>}
           copy="A selection of our completed starlight and ambient lighting installations. Different vehicles, each with an atmosphere of its own."
         />

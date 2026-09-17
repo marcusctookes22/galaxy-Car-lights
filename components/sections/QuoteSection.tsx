@@ -11,9 +11,9 @@ export function QuoteSection() {
         <aside className="sticky top-30 self-start max-lg:static">
           <Eyebrow>Make it personal</Eyebrow>
           <h2 id="quote-heading" tabIndex={-1} className="section-title my-5">Start your<br /><span className="serif-gold">build.</span></h2>
-          <p className="section-copy max-w-[390px]">Bring your ideas together. Add your vehicle, choose a lighting experience, and review the details of your enquiry.</p>
-          <div className="mt-8 h-px bg-white/10" />
-          <p className="mt-6 max-w-[360px] text-sm leading-7 text-neutral-400">{config ? "Review your enquiry, then send it to our team. A quote request does not confirm a booking." : "You can prepare and review your enquiry here. Online quote delivery is not available yet."}</p>
+          <p className="section-copy max-w-[390px] max-sm:hidden">Bring your ideas together. Add your vehicle, choose a lighting experience, and review the details of your enquiry.</p>
+          <div className="mt-8 h-px bg-white/10 max-sm:hidden" />
+          <p className="mt-6 max-w-[360px] text-sm leading-7 text-neutral-400">{config ? "Send your build details and our team will contact you directly to discuss the next steps. This does not confirm a booking." : "Explore the enquiry form below. Online submission will be available when the website launches."}</p>
         </aside>
         <QuoteForm deliveryEnabled={Boolean(config)} turnstileSiteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY?.trim() || ""} />
       </Container>

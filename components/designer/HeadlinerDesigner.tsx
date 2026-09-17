@@ -215,7 +215,7 @@ export function HeadlinerDesigner() {
           <p className={styles.summary} aria-live="polite">{summary}</p>
           <div className={styles.actions}>
             <button type="button" className="button-base button-primary" onClick={useDesign}>Use This Design <span aria-hidden="true">↗</span></button>
-            <a className="button-base" href="#quote">Request Custom Quote</a>
+            <a className="button-base" href="#quote">Discuss your build</a>
           </div>
           <p className={styles.note}>Every vehicle is different. The final layout and shooting-star paths are tailored to your roof and glass.</p>
         </div>

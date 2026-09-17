@@ -10,7 +10,7 @@ export function Faq() {
   return (
     <section className="section-space" id="faq">
       <Container>
-        <SectionHeading eyebrow="Frequently asked" title={<>Before we touch<br />your <span className="serif-gold">vehicle.</span></>} copy="From choosing your configuration to planning the installation, here are a few things to know before we begin." />
+        <SectionHeading eyebrow="Frequently asked" title={<>Before we touch<br />your <span className="serif-gold">vehicle.</span></>} copy="From choosing your configuration to planning the installation, here are a few things to know before we begin." mobileCopy={null} />
         <div className="border-t border-white/10">
           {faqItems.map((item, index) => {
             const open = openIndex === index;

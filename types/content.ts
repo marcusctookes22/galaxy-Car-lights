@@ -3,6 +3,7 @@ export type Service = {
   number: string;
   title: string;
   description: string;
+  mobileDescription: string;
   quoteValue: string;
 };
 

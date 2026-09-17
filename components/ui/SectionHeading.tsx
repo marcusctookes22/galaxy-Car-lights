@@ -12,21 +12,23 @@ export function SectionHeading({
   eyebrow,
   title,
   copy,
+  mobileCopy,
 }: {
   eyebrow: string;
   title: ReactNode;
   copy: string;
+  mobileCopy?: string | null;
 }) {
   return (
-    <div className="mb-12 grid grid-cols-[1.5fr_1fr] items-end gap-12 lg:mb-16 max-md:grid-cols-1 max-md:gap-6">
+    <div className="mb-12 grid grid-cols-[1.5fr_1fr] items-end gap-12 lg:mb-16 max-md:grid-cols-1 max-md:gap-6 max-sm:mb-8 max-sm:gap-4">
       <div className="min-w-0">
         <Eyebrow>{eyebrow}</Eyebrow>
         <h2 className="section-title mt-5 max-w-[800px] font-light tracking-[-.045em]">
           {title}
         </h2>
       </div>
-      <p className="section-copy max-w-[400px] justify-self-end leading-7 max-md:justify-self-start">
-        {copy}
+      <p className={`section-copy max-w-[400px] justify-self-end leading-7 max-md:justify-self-start ${mobileCopy === null ? "max-sm:hidden" : ""}`}>
+        {typeof mobileCopy === "string" ? <><span className="max-sm:hidden">{copy}</span><span className="sm:hidden">{mobileCopy}</span></> : copy}
       </p>
     </div>
   );

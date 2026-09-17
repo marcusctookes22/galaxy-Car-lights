@@ -7,7 +7,7 @@ import { ContactFailure, externalJson } from "./protection.server.ts";
 export function emailPayload(input: ValidContact, config: ContactConfig) {
   // Plain-text email: visitor input is never interpreted as HTML or email headers.
   const text = [
-    "New Galaxy Car Lights quote request",
+    "New Galaxy Car Lights build enquiry",
     `Vehicle: ${input.year} ${input.make} ${input.model}`,
     `Service: ${input.service}${input.shootingStar ? " + Shooting Star" : ""}`,
     `Name: ${input.name}`, `Email: ${input.email}`, `Phone: ${input.phone}`,
@@ -15,7 +15,7 @@ export function emailPayload(input: ValidContact, config: ContactConfig) {
     "", "Build notes:", input.message || "No additional notes.",
     "", `Contact consent: Yes (${CONTACT_CONSENT_VERSION})`, CONTACT_CONSENT_TEXT,
   ].join("\n");
-  return { from: config.from, to: [config.to], reply_to: input.email, subject: "New quote request — Galaxy Car Lights", text };
+  return { from: config.from, to: [config.to], reply_to: input.email, subject: "New build enquiry — Galaxy Car Lights", text };
 }
 
 export async function deliverEmail(input: ValidContact, config: ContactConfig, fetcher: typeof fetch = fetch) {

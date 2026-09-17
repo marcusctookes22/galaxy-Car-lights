@@ -12,6 +12,13 @@ import { Services } from "@/components/sections/Services";
 import { StarlightFeature } from "@/components/sections/StarlightFeature";
 import { StatsStrip } from "@/components/sections/StatsStrip";
 import { Testimonials } from "@/components/sections/Testimonials";
+import type { Metadata } from "next";
+import { getPublication } from "@/lib/publication";
+
+const publication = getPublication();
+export const metadata: Metadata = publication.indexable && publication.url
+  ? { alternates: { canonical: `${publication.url}/` } }
+  : {};
 
 export default function HomePage() {
   return (

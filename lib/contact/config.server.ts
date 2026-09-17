@@ -32,7 +32,7 @@ export type ContactConfig = z.infer<typeof serverSchema>;
 
 // No bypass or in-memory fallback: incomplete configuration disables delivery.
 export function getContactConfig(env: Record<string, string | undefined> = process.env): ContactConfig | null {
-  if (env.CONTACT_DELIVERY_ENABLED !== "true") return null;
+  if (env.STATIC_EXPORT === "true" || env.CONTACT_DELIVERY_ENABLED !== "true") return null;
   const result = serverSchema.safeParse({
     origins: clean(env.CONTACT_ALLOWED_ORIGINS).split(",").map((value) => value.trim()).filter(Boolean),
     to: clean(env.CONTACT_EMAIL), from: clean(env.CONTACT_FROM_EMAIL),

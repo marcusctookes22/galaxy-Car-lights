@@ -9,6 +9,7 @@ export function Testimonials() {
       <Container>
         <SectionHeading
           eyebrow="Client experience"
+          mobileCopy="Sample reviews for illustration—not verified customer reviews."
           title={<>Trust is part of<br />the <span className="serif-gold">finish.</span></>}
           copy="Thoughtful details. A personal experience. An interior that feels like you. The sample reviews below illustrate that vision; they are not verified customer reviews."
         />

@@ -4,7 +4,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "How long does an installation take?",
     answer:
-      "Timing depends on the vehicle and lighting package. A final time estimate is provided with the quote before an appointment is booked.",
+      "Timing depends on the vehicle and lighting package. Our team will discuss the expected installation time with you before an appointment is booked.",
   },
   {
     question: "How can I customize my starlights?",
@@ -17,8 +17,8 @@ export const faqItems: FaqItem[] = [
       "The goal is a clean OEM-plus appearance with wiring and hardware integrated as discreetly as the vehicle allows.",
   },
   {
-    question: "Do I need a quote before booking?",
+    question: "What happens after I send my details?",
     answer:
-      "Yes. Vehicle trim and installation complexity can change the scope significantly, so confirming the build first keeps expectations and pricing clear.",
+      "Our team will contact you to discuss your vehicle, chosen services and build details. Installation arrangements are handled directly during that conversation.",
   },
 ];
